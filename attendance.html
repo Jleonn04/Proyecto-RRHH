@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance - Proyecto RRHH</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1><a href="index.html">Proyecto RRHH</a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html#modulo">Volver a Módulo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="ancho-completo">
+    <h2>Módulo Attendance</h2>
+    <p>
+      Marcá la casilla de cada día en que la persona asistió; si queda vacía, se
+      considera ausente. Con las <strong>flechas del teclado</strong> te movés entre
+      casillas y con la <strong>barra espaciadora</strong> marcás o desmarcás.
+      <strong>Datos de ejemplo (ficticios).</strong>
+    </p>
+
+    <div class="barra-control">
+      <label for="selector-mes">Mes:</label>
+      <select id="selector-mes"></select>
+
+      <label for="selector-anio">Año:</label>
+      <select id="selector-anio"></select>
+
+      <button type="button" id="boton-guardar" class="boton" disabled>Guardar cambios</button>
+
+      <span id="estado-guardado" class="mensaje" role="status"></span>
+    </div>
+
+    <h3 id="titulo-mes"></h3>
+
+    <div class="contenedor-tabla">
+      <table id="matriz" class="matriz"></table>
+    </div>
+
+    <details id="detalle-payload" hidden>
+      <summary>Esto es lo que se enviaría al servidor</summary>
+      <p class="nota">
+        Prototipo: así se vería el paquete de cambios que recibiría <code>POST /api/attendance/bulk</code>.
+        Todavía no se envía nada a ningún lado.
+      </p>
+      <pre id="cuadro-payload"></pre>
+    </details>
+  </main>
+
+  <footer>
+    <p>Proyecto RRHH - Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="attendance.js"></script>
+</body>
+</html>

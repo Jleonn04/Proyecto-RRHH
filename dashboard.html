@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Proyecto RRHH</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1><a href="index.html">Proyecto RRHH</a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html#dashboard">Volver al dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Dashboard de RRHH</h2>
+        <p>Octubre 2026 - <span id="texto-vista">Administrador - Todas las áreas</span>. <strong>Datos de ejemplo (ficticios).</strong></p>
+
+    <div class="simulador">
+      <p class="simulador-titulo">Simulador (solo prototipo)</p>
+      <label for="selector-rol">Ver como:</label>
+      <select id="selector-rol">
+        <option value="administrador">Administrador</option>
+        <option value="usuario">Usuario</option>
+      </select>
+
+      <label for="selector-area">Área:</label>
+      <select id="selector-area">
+        <option value="Todas las áreas">Todas las áreas</option>
+        <option value="Ventas">Ventas</option>
+        <option value="Administración">Administración</option>
+        <option value="Depósito">Depósito</option>
+        <option value="Atención al cliente">Atención al cliente</option>
+      </select>
+    </div>
+
+    <div class="personalizar" id="panel-personalizar">
+      <h3>Personalizar dashboard (solo Administrador)</h3>
+
+      <div class="personalizar-opciones">
+
+        <fieldset>
+          <legend>Métricas visibles</legend>
+          <label><input type="checkbox" id="ver-rotacion" checked> Rotación</label>
+          <label><input type="checkbox" id="ver-ausentismo" checked> Ausentismo</label>
+          <label><input type="checkbox" id="ver-licencias" checked> Licencias</label>
+          <label><input type="checkbox" id="ver-clima" checked> Clima laboral</label>
+        </fieldset>
+
+        <div>
+          <label for="tipo-rotacion">Gráfico de rotación:</label>
+          <select id="tipo-rotacion">
+            <option value="line">Línea</option>
+            <option value="bar">Barras</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="tipo-ausentismo">Gráfico de ausentismo:</label>
+          <select id="tipo-ausentismo">
+            <option value="bar">Barras</option>
+            <option value="line">Línea</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+
+    <article class="kpi" id="tarjeta-rotacion">
+      <article class="kpi">
+        <h3>Rotación</h3>
+        <p class="kpi-valor" id="valor-rotacion">3,5%</p>
+        <p class="kpi-detalle">Bajas del mes sobre la dotación promedio</p>
+      </article>
+
+      <article class="kpi" id="tarjeta-ausentismo">
+        <h3>Ausentismo</h3>
+        <p class="kpi-valor" id="valor-ausentismo">4,8%</p>
+        <p class="kpi-detalle">Días de ausencia sobre días laborables</p>
+      </article>
+
+      <article class="kpi" id="tarjeta-licencias">
+        <h3>Licencias</h3>
+        <p class="kpi-valor" id="valor-licencias">5</p>
+        <p class="kpi-detalle">Personas con licencia activa</p>
+      </article>
+
+      <article class="kpi" id="tarjeta-clima">
+        <h3>Clima laboral</h3>
+        <p class="kpi-valor" id="valor-clima">78%</p>
+        <p class="kpi-detalle">Satisfacción en la última encuesta</p>
+      </article>
+
+    </div>
+
+    <div class="graficos">
+
+      <article class="grafico">
+        <h3>Rotación de los últimos 6 meses</h3>
+        <div class="grafico-caja">
+          <canvas id="grafico-rotacion" role="img"
+                  aria-label="Gráfico de líneas con la rotación mensual de los últimos 6 meses"></canvas>
+        </div>
+      </article>
+
+      <article class="grafico">
+        <h3>Ausentismo por área</h3>
+        <div class="grafico-caja">
+          <canvas id="grafico-ausentismo" role="img"
+                  aria-label="Gráfico de barras con el ausentismo de cada área"></canvas>
+        </div>
+      </article>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Proyecto RRHH - Todos los derechos reservados. </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+  <script src="dashboard.js"></script>
+
+</body>
+</html>

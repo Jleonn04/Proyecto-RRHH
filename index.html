@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto RRHH</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+    <script src="modulos.js" defer></script>
+  <a class="whatsapp-flotante"
+     href="https://wa.me/549XXXXXXXXXX?text=Hola%2C%20te%20escribo%20desde%20Proyecto%20RRHH.%20Mi%20nombre%20es%20%5Bnombre%5D%20y%20tengo%20una%20consulta%20sobre%3A%20"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Consultar a RR.HH. por WhatsApp"
+     title="Consultar por WhatsApp">
+    <img src="imagenes/whatsapp.svg" alt="" width="32" height="32">
+  </a>
+
+<body class="pagina-principal">
+  <!-- ===================== 1. ENCABEZADO ===================== -->
+  <header>
+    <h1><a href="#inicio">Proyecto RRHH</a></h1>
+    <nav>
+      <ul>
+        <li><a href="#quienes-somos">Quiénes somos</a></li>
+        <li><a href="#autores">Nosotros</a></li>
+        <li><a href="#modulo">Módulo</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+      </ul>
+    </nav>
+
+    <nav class="nav-volver">
+      <ul>
+        <li><a href="#modulo">Volver a Módulo</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+    <!-- ===================== INICIO (HOME) ===================== -->
+    <section id="inicio">
+      <h2 class="inicio-titulo">Proyecto RRHH</h2>
+
+      <p class="inicio-subtitulo">
+        Texto de ejemplo: una frase corta que cuente de qué trata el proyecto.
+      </p>
+
+      <a class="boton" href="#quienes-somos">Conocé quiénes somos</a>
+    </section>
+
+    <!-- ===================== 2. QUIÉNES SOMOS ===================== -->
+    <section id="quienes-somos">
+      <h2>Quiénes somos</h2>
+      <p>
+        Texto de ejemplo: acá vamos a contar qué es el Proyecto RRHH,
+        qué problema resuelve y a qué organizaciones está dirigido
+        (por ejemplo, Pymes y comercios).
+      </p>
+    </section>
+
+    <!-- ===================== 3. LOS AUTORES ===================== -->
+    <section id="autores">
+      <h2>Nosotros</h2>
+      <article>
+        <h3>Ignacio Bischoff</h3>
+         <img class="foto-autor" src="imagenes/autor1.png" alt="Ignacio Bischoff, uno de los autores del Proyecto RRHH">
+        <p>Texto de ejemplo: breve presentación y formación del primer autor.</p>
+      </article>
+
+      <article>
+        <h3>Juan Ignacio León</h3>
+                <img class="foto-autor" src="imagenes/autor2.png" alt="Juan Ignacio León, uno de los autores del Proyecto RRHH">
+        <p>Texto de ejemplo: breve presentación y formación del segundo autor.</p>
+      </article>
+    </section>
+
+    <!-- ===================== MÓDULO ===================== -->
+    <section id="modulo">
+      <h2>Módulo</h2>
+
+      <article>
+        <h3>Módulo People</h3>
+                <p><a class="boton" href="#modulo-people">Abrir módulo</a></p>
+        <p>
+          <strong>Gestión de nómina y legajo digital.</strong>
+          Centralizá los datos de tu personal y sus documentos en un solo lugar.
+          Podés cargar la información directamente desde la plataforma o subir
+          un archivo Excel o CSV con tu nómina.
+        </p>
+      </article>
+
+      <article>
+        <h3>Módulo Attendance</h3>
+        <p><a class="boton" href="attendance.html">Abrir módulo</a></p>
+        <p>
+          <strong>Control de asistencia.</strong>
+          Registrá las entradas y salidas, definí los horarios de trabajo
+          de cada persona y llevá el control de las horas extras.
+        </p>
+      </article>
+  
+      <article>
+        <h3>Módulo Me</h3>
+        <p>
+          <strong>El portal del empleado.</strong>
+          Cada persona puede ver sus recibos de haberes y hacer sus solicitudes.
+          Tocá una opción para entrar: en cada una vas a encontrar los pasos para hacerlo.
+        </p>
+
+        <a class="opcion-me" href="#modulo-me-recibos">Recibos de haberes</a>
+
+        <a class="opcion-me" href="#modulo-me-vacaciones">Solicitar vacaciones</a>
+
+        <a class="opcion-me" href="#modulo-me-licencias">Solicitar licencias</a>
+
+      </article>
+    </section>
+
+    <section id="modulo-people" class="subpestana">
+      <h2>Módulo People</h2>
+
+
+      <!-- ---------- Caja 1: NÓMINA ---------- -->
+      <article class="caja">
+        <h3>Nómina</h3>
+        <p>Subí la nómina de tu personal en un archivo .csv o .xlsx.</p>
+
+        <input type="file" id="archivo-nomina" class="visualmente-oculto" accept=".csv,.xlsx">
+        <label for="archivo-nomina" class="clip">📎 Adjuntar archivo</label>
+
+        <p id="nombre-archivo" class="mensaje" role="status">Ningún archivo seleccionado</p>
+
+        <p class="nota">Formatos permitidos: .csv y .xlsx, hasta 5 MB. Prototipo: el archivo no se envía a ningún lado.</p>
+      </article>
+
+      <!-- ---------- Caja 2: LEGAJO ---------- -->
+      <article class="caja">
+        <h3>Legajo</h3>
+        <p>El legajo digital reúne los datos de cada colaborador. Tocá la opción de abajo para cargar uno manualmente.</p>
+
+        <details>
+          <summary>Cargar datos de un colaborador</summary>
+
+          <form id="form-legajo" class="formulario" autocomplete="off">
+
+            <div class="campo">
+              <label for="leg-nombre">Nombre</label>
+              <input type="text" id="leg-nombre" required>
+            </div>
+
+            <div class="campo">
+              <label for="leg-apellido">Apellido</label>
+              <input type="text" id="leg-apellido" required>
+            </div>
+
+            <div class="campo">
+              <label for="leg-area">Área</label>
+              <select id="leg-area" required>
+                <option value="">Elegí un área</option>
+                <option>Ventas</option>
+                <option>Administración</option>
+                <option>Depósito</option>
+                <option>Atención al cliente</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label for="leg-puesto">Puesto</label>
+              <input type="text" id="leg-puesto" required>
+            </div>
+
+            <div class="campo">
+              <label for="leg-ingreso">Fecha de ingreso</label>
+              <input type="date" id="leg-ingreso" required>
+            </div>
+
+            <div class="campo">
+              <label for="leg-correo">Correo electrónico</label>
+              <input type="email" id="leg-correo" required>
+            </div>
+
+            <div class="campo-ancho">
+              <button type="submit" class="boton">Guardar colaborador</button>
+            </div>
+
+          </form>
+
+          <p id="mensaje-legajo" class="mensaje" role="status"></p>
+        </details>
+      </article>
+    </section>
+
+    <!-- ===================== SUBPESTAÑA: RECIBOS DE HABERES ===================== -->
+    <section id="modulo-me-recibos" class="subpestana">
+      <h2>Recibos de haberes</h2>
+
+      <article class="caja">
+        <h3>¿Cómo se hace? <span class="aviso">!</span></h3>
+        <ol>
+          <li>Elegí el año que querés consultar.</li>
+          <li>Tocá el mes del recibo que necesitás.</li>
+          <li>El recibo se abre en formato PDF, en una pestaña nueva. Desde ahí podés descargarlo o imprimirlo.</li>
+        </ol>
+      </article>
+
+      <article class="caja">
+        <h3>Mis recibos</h3>
+
+        <div class="barra-control">
+          <label for="selector-anio-recibos">Año:</label>
+          <select id="selector-anio-recibos"></select>
+        </div>
+
+        <ul id="lista-recibos" class="lista-meses"></ul>
+
+        <p class="nota">
+          Prototipo: todos los meses abren el mismo PDF de ejemplo, con datos inventados.
+          En el sistema real, cada mes tendría su propio recibo y cada persona vería solo los suyos.
+        </p>
+      </article>
+    </section>
+
+    <!-- ===================== SUBPESTAÑA: SOLICITAR VACACIONES ===================== -->
+    <section id="modulo-me-vacaciones" class="subpestana">
+      <h2>Solicitar vacaciones</h2>
+
+      <article class="caja">
+        <h3>¿Cómo se hace? <span class="aviso">!</span></h3>
+        <ol>
+          <li>Elegí en el calendario los días que querés tomarte. Los días en rojo no están disponibles.</li>
+          <li>Revisá el resumen de los días elegidos.</li>
+          <li>Tocá "Enviar solicitud": tu responsable la revisa y te avisa la respuesta.</li>
+        </ol>
+      </article>
+
+      <article class="caja">
+        <h3>Elegí tus días</h3>
+
+        <div id="calendario-vacaciones" class="calendario"></div>
+        <ul class="leyenda">
+          <li><span class="muestra muestra-elegido"></span>Día elegido</li>
+          <li><span class="muestra muestra-no-disponible"></span>No disponible</li>
+          <li><span class="muestra muestra-pasado"></span>Ya pasó</li>
+        </ul>
+
+        <p id="resumen-vacaciones" class="mensaje" role="status"></p>
+
+        <p class="centrado">
+          <button type="button" id="enviar-vacaciones" class="boton" disabled>Enviar solicitud</button>
+        </p>
+
+        <p id="mensaje-vacaciones" class="mensaje" role="status"></p>
+
+        <p class="nota">
+          Prototipo: los días no disponibles son de ejemplo y la solicitud no se envía a ningún lado.
+        </p>
+      </article>
+    </section>
+
+    <!-- ===================== SUBPESTAÑA: SOLICITAR LICENCIAS ===================== -->
+    <section id="modulo-me-licencias" class="subpestana">
+      <h2>Solicitar licencias</h2>
+
+      <article class="caja">
+        <h3>¿Cómo se hace? <span class="aviso">!</span></h3>
+        <ol>
+          <li>Elegí el tipo de licencia.</li>
+          <li>Elegí en el calendario los días que necesitás. Los días en rojo no están disponibles.</li>
+          <li>Revisá el resumen y tocá "Enviar solicitud". Después vas a poder seguir su estado desde la plataforma.</li>
+        </ol>
+      </article>
+
+      <article class="caja">
+        <h3>Elegí el tipo y tus días</h3>
+
+        <div class="barra-control">
+          <label for="tipo-licencias">Tipo de licencia:</label>
+          <select id="tipo-licencias">
+            <option value="">Elegí un tipo</option>
+            <option value="enfermedad">Enfermedad o accidente</option>
+            <option value="examen">Examen o estudio</option>
+            <option value="matrimonio">Matrimonio</option>
+            <option value="nacimiento">Nacimiento de un hijo o hija</option>
+            <option value="duelo">Fallecimiento de un familiar</option>
+            <option value="otra">Otra</option>
+          </select>
+        </div>
+
+        <div id="calendario-licencias" class="calendario"></div>
+
+        <ul class="leyenda">
+          <li><span class="muestra muestra-elegido"></span>Día elegido</li>
+          <li><span class="muestra muestra-no-disponible"></span>No disponible</li>
+          <li><span class="muestra muestra-pasado"></span>Ya pasó</li>
+        </ul>
+
+        <p id="resumen-licencias" class="mensaje" role="status"></p>
+
+        <p class="centrado">
+          <button type="button" id="enviar-licencias" class="boton" disabled>Enviar solicitud</button>
+        </p>
+
+        <p id="mensaje-licencias" class="mensaje" role="status"></p>
+
+        <p class="nota">
+          Prototipo: los días no disponibles y los tipos de licencia son de ejemplo, y la solicitud no se envía a ningún lado.
+          Por ahora no se adjuntan certificados.
+        </p>
+      </article>
+    </section>
+
+    <!-- ===================== 4. EL DASHBOARD ===================== -->
+    <section id="dashboard">
+      <h2>Dashboard</h2>
+      <p>
+        Texto de ejemplo: el dashboard es un tablero donde las organizaciones
+        pueden seguir sus indicadores de Recursos Humanos.
+      </p>
+      <p class="centrado"><a class="boton" href="dashboard.html">Ver el prototipo del dashboard</a></p>
+
+      <h3>¿Qué indicadores muestra?</h3>
+      <ul class="indicadores">
+        <li>Rotación</li>
+        <li>Ausentismo</li>
+        <li>Licencias</li>
+        <li>Clima laboral</li>
+      </ul>
+
+      <h3>¿Qué puede hacer cada rol?</h3>
+      <ul class="roles">
+        <li>
+          <strong>Usuario:</strong> ve las métricas de su área o sector.
+          No puede modificar nada.
+        </li>
+        <li>
+          <strong>Administrador:</strong> ve todo y además puede personalizar
+          el dashboard (elegir métricas y cambiar gráficos).
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- ===================== 5. PIE DE PÁGINA ===================== -->
+  <footer>
+    <p>Proyecto RRHH - Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
